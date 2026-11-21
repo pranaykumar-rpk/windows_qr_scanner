@@ -2,14 +2,24 @@ import 'dart:io';
 
 import 'package:camera/camera.dart';
 
+/// Manages the Windows camera lifecycle, selection, and frame capture.
 class WindowsCameraManager {
   CameraController? _controller;
   List<CameraDescription> _cameras = const [];
 
+  /// The active [CameraController], or `null` if not initialized.
   CameraController? get controller => _controller;
+
+  /// Unmodifiable list of cameras discovered on the device.
   List<CameraDescription> get cameras => List.unmodifiable(_cameras);
+
+  /// Whether the camera controller is currently initialized.
   bool get isInitialized => _controller?.value.isInitialized ?? false;
 
+  /// Discovers available cameras and initializes the selected camera.
+  ///
+  /// Throws an [UnsupportedError] on non-Windows platforms and a [StateError]
+  /// if no cameras are found.
   Future<void> initialize({
     CameraDescription? preferredCamera,
     ResolutionPreset resolutionPreset = ResolutionPreset.low,
@@ -35,6 +45,7 @@ class WindowsCameraManager {
     _controller = controller;
   }
 
+  /// Captures a single still frame from the initialized camera.
   Future<XFile> captureFrame() async {
     final cameraController = _controller;
     if (cameraController == null || !cameraController.value.isInitialized) {
@@ -43,6 +54,7 @@ class WindowsCameraManager {
     return cameraController.takePicture();
   }
 
+  /// Disposes the active [CameraController], if any.
   Future<void> dispose() async {
     final cameraController = _controller;
     _controller = null;

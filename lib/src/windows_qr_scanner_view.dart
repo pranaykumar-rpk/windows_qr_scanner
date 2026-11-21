@@ -4,7 +4,16 @@ import 'package:flutter/material.dart';
 import 'scanner_state.dart';
 import 'windows_qr_scanner_controller.dart';
 
+/// A widget that displays the live Windows camera preview and a scan overlay.
+///
+/// Reacts to [WindowsQrScannerController.stateNotifier] to render loading,
+/// error, uninitialized, and active camera preview states.
 class WindowsQrScannerView extends StatelessWidget {
+  /// Creates a [WindowsQrScannerView] bound to [controller].
+  ///
+  /// [overlay] defaults to a centered corner-bracket viewfinder.
+  /// [fit] controls how the camera preview is fitted within its bounds and
+  /// defaults to [BoxFit.cover].
   const WindowsQrScannerView({
     super.key,
     required this.controller,
@@ -12,8 +21,13 @@ class WindowsQrScannerView extends StatelessWidget {
     this.fit = BoxFit.cover,
   });
 
+  /// The controller managing the camera and scanning lifecycle.
   final WindowsQrScannerController controller;
+
+  /// The widget layered on top of the camera preview.
   final Widget overlay;
+
+  /// How the camera preview should be inscribed into the available space.
   final BoxFit fit;
 
   @override

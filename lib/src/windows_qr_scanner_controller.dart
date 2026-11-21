@@ -27,16 +27,23 @@ class WindowsQrScannerController extends ChangeNotifier {
           stopOnFirstDetect: stopOnFirstDetect,
         );
 
+  /// How frequently a camera frame is captured and decoded.
   final Duration scanInterval;
+
+  /// Whether scanning automatically stops after the first QR code is detected.
   final bool stopOnFirstDetect;
   final WindowsQrScannerService _service;
 
+  /// Notifies listeners whenever the scanner's [WindowsQrScannerState] changes.
   final ValueNotifier<WindowsQrScannerState> stateNotifier =
       ValueNotifier<WindowsQrScannerState>(WindowsQrScannerState.idle);
 
   bool _isDisposed = false;
 
+  /// The current [WindowsQrScannerState] of the scanner.
   WindowsQrScannerState get state => stateNotifier.value;
+
+  /// The underlying [CameraController], or `null` if not yet initialized.
   CameraController? get cameraController => _service.cameraController;
 
   /// Starts the camera and background scanning process.

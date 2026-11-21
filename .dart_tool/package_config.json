@@ -57,7 +57,7 @@
     },
     {
       "name": "characters",
-      "rootUri": "file:///Users/pranay/.pub-cache/hosted/pub.dev/characters-1.4.0",
+      "rootUri": "file:///Users/pranay/.pub-cache/hosted/pub.dev/characters-1.4.1",
       "packageUri": "lib/",
       "languageVersion": "3.4"
     },
@@ -123,9 +123,9 @@
     },
     {
       "name": "flutter",
-      "rootUri": "file:///Users/pranay/SDK/flutter/packages/flutter",
+      "rootUri": "file:///Users/pranay/fvm/versions/3.44.8/packages/flutter",
       "packageUri": "lib/",
-      "languageVersion": "3.8"
+      "languageVersion": "3.10"
     },
     {
       "name": "flutter_lints",
@@ -141,15 +141,15 @@
     },
     {
       "name": "flutter_test",
-      "rootUri": "file:///Users/pranay/SDK/flutter/packages/flutter_test",
+      "rootUri": "file:///Users/pranay/fvm/versions/3.44.8/packages/flutter_test",
       "packageUri": "lib/",
-      "languageVersion": "3.8"
+      "languageVersion": "3.10"
     },
     {
       "name": "flutter_web_plugins",
-      "rootUri": "file:///Users/pranay/SDK/flutter/packages/flutter_web_plugins",
+      "rootUri": "file:///Users/pranay/fvm/versions/3.44.8/packages/flutter_web_plugins",
       "packageUri": "lib/",
-      "languageVersion": "3.8"
+      "languageVersion": "3.10"
     },
     {
       "name": "glob",
@@ -201,19 +201,19 @@
     },
     {
       "name": "matcher",
-      "rootUri": "file:///Users/pranay/.pub-cache/hosted/pub.dev/matcher-0.12.17",
+      "rootUri": "file:///Users/pranay/.pub-cache/hosted/pub.dev/matcher-0.12.19",
       "packageUri": "lib/",
-      "languageVersion": "3.4"
+      "languageVersion": "3.7"
     },
     {
       "name": "material_color_utilities",
-      "rootUri": "file:///Users/pranay/.pub-cache/hosted/pub.dev/material_color_utilities-0.11.1",
+      "rootUri": "file:///Users/pranay/.pub-cache/hosted/pub.dev/material_color_utilities-0.13.0",
       "packageUri": "lib/",
-      "languageVersion": "2.17"
+      "languageVersion": "3.5"
     },
     {
       "name": "meta",
-      "rootUri": "file:///Users/pranay/.pub-cache/hosted/pub.dev/meta-1.17.0",
+      "rootUri": "file:///Users/pranay/.pub-cache/hosted/pub.dev/meta-1.18.0",
       "packageUri": "lib/",
       "languageVersion": "3.5"
     },
@@ -303,9 +303,9 @@
     },
     {
       "name": "sky_engine",
-      "rootUri": "file:///Users/pranay/SDK/flutter/bin/cache/pkg/sky_engine",
+      "rootUri": "file:///Users/pranay/fvm/versions/3.44.8/bin/cache/pkg/sky_engine",
       "packageUri": "lib/",
-      "languageVersion": "3.8"
+      "languageVersion": "3.10"
     },
     {
       "name": "source_span",
@@ -345,9 +345,9 @@
     },
     {
       "name": "test_api",
-      "rootUri": "file:///Users/pranay/.pub-cache/hosted/pub.dev/test_api-0.7.7",
+      "rootUri": "file:///Users/pranay/.pub-cache/hosted/pub.dev/test_api-0.7.11",
       "packageUri": "lib/",
-      "languageVersion": "3.5"
+      "languageVersion": "3.7"
     },
     {
       "name": "typed_data",
@@ -405,8 +405,8 @@
     }
   ],
   "generator": "pub",
-  "generatorVersion": "3.10.4",
-  "flutterRoot": "file:///Users/pranay/SDK/flutter",
-  "flutterVersion": "3.38.5",
+  "generatorVersion": "3.12.2",
+  "flutterRoot": "file:///Users/pranay/fvm/versions/3.44.8",
+  "flutterVersion": "3.44.8",
   "pubCache": "file:///Users/pranay/.pub-cache"
 }

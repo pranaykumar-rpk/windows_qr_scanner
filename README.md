@@ -69,6 +69,10 @@ This package restricts capabilities to **Windows only**. Calling `startScanning`
 
 See the [example](example/) folder for a complete runnable app demonstrating proper lifecycle and error handling.
 
+## Author
+
+Developed by **Pranay Kumar** ([@pranaykumar-rpk](https://github.com/pranaykumar-rpk)).
+
 ## License
 
 MIT - see the [LICENSE](LICENSE) file.

@@ -3,9 +3,16 @@ import 'dart:typed_data';
 import 'package:image/image.dart' as img;
 import 'package:zxing2/qrcode.dart';
 
+/// Decodes QR codes from raw image bytes using `zxing2` and `image`.
 class ZxingQrDecoder {
+  /// Creates a [ZxingQrDecoder].
   const ZxingQrDecoder();
 
+  /// Attempts to decode a QR code from [imageBytes].
+  ///
+  /// Uses a multi-pass strategy (center-cropped and full-frame, downscaled to
+  /// at most 800px, with an optional contrast-enhanced fallback) to improve
+  /// detection reliability. Returns `null` if no QR code is found.
   String? decode(Uint8List imageBytes) {
     final image = img.decodeImage(imageBytes);
     if (image == null) {

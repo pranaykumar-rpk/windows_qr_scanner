@@ -9,11 +9,21 @@ import '../scanner_state.dart';
 import 'frame_processor.dart';
 import 'windows_camera_manager.dart';
 
+/// Callback invoked when a QR code is successfully decoded.
 typedef OnQrDetected = void Function(String code);
+
+/// Callback invoked when the scanner's [WindowsQrScannerState] changes.
 typedef OnStateChanged = void Function(WindowsQrScannerState state);
+
+/// Callback invoked when a non-fatal error occurs during frame capture or
+/// file cleanup.
 typedef OnError = void Function(Object error, StackTrace? stackTrace);
 
+/// Coordinates periodic camera frame capture, temporary file handling, and
+/// background QR decoding on Windows.
 class WindowsQrScannerService {
+  /// Creates a [WindowsQrScannerService] with the given [scanInterval] and
+  /// [stopOnFirstDetect] behavior.
   WindowsQrScannerService({
     required Duration scanInterval,
     required bool stopOnFirstDetect,
@@ -38,9 +48,13 @@ class WindowsQrScannerService {
   OnQrDetected? _onQrDetected;
   OnError? _onError;
 
+  /// The underlying [CameraController], or `null` if not initialized.
   CameraController? get cameraController => _cameraManager.controller;
+
+  /// Whether the underlying camera is initialized.
   bool get isInitialized => _cameraManager.isInitialized;
 
+  /// Initializes the camera (if needed) and begins periodic frame scanning.
   Future<void> start({
     required OnQrDetected onQrDetected,
     required OnStateChanged onStateChanged,
@@ -76,6 +90,7 @@ class WindowsQrScannerService {
     }
   }
 
+  /// Stops the periodic frame capture timer.
   Future<void> stop() async {
     _timer?.cancel();
     _timer = null;
@@ -84,6 +99,7 @@ class WindowsQrScannerService {
     _emit(const WindowsQrScannerState(status: WindowsQrScannerStatus.stopped));
   }
 
+  /// Stops scanning and disposes the underlying camera resources.
   Future<void> dispose() async {
     await stop();
     await _cameraManager.dispose();
