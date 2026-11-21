@@ -1,6 +1,6 @@
 name: windows_qr_scanner
 description: A production-ready Windows-only QR scanner package for Flutter desktop apps, providing a clean API, smooth decoding via ZXing, and high performance frame handling.
-version: 0.1.0
+version: 1.0.0
 homepage: https://github.com/pranaykumar-rpk/Student-Marks-Memo
 repository: https://github.com/pranaykumar-rpk/Student-Marks-Memo
 issue_tracker: https://github.com/pranaykumar-rpk/Student-Marks-Memo/issues

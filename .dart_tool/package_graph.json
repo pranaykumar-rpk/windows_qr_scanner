@@ -5,7 +5,7 @@
   "packages": [
     {
       "name": "windows_qr_scanner",
-      "version": "0.1.0",
+      "version": "1.0.0",
       "dependencies": [
         "camera",
         "camera_windows",
